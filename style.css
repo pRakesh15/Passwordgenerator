@@ -1,0 +1,201 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    font-family: Copperplate Gothic Light;
+}
+
+.w {
+    color: rgb(40, 254, 254);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        color: #87e0fc;
+        text-shadow: 0 0 10px #03bcf4,
+            0 0 20px #03bcf4,
+            0 0 40px #03bcf4;
+
+    }
+
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vmax;
+    padding: 3vmax;
+}
+
+input {
+    padding: 5px;
+    padding-right: 5px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 2vmax;
+
+
+}
+
+.submit {
+    margin-right: 69px;
+}
+
+button {
+    background-color: rgb(52, 240, 52);
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+button:hover {
+
+    cursor: pointer;
+    font-family: Copperplate Gothic Light;
+    background-color: #4ef5a4;
+    box-shadow: 0 0 3px #4ef5a4,
+        0 0 5px #4ef5a4,
+        0 0 10px #4ef5a4,
+        0 0 20px #4ef5a4;
+}
+
+.block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmax;
+    border: 1px solid aqua;
+}
+
+#content #password {
+    position: relative;
+    width: 120%;
+    background: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#content #password input {
+    position: relative;
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: .5rem;
+}
+
+#content #cpassword {
+    position: relative;
+    width: 120%;
+    background: #fff;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#content #cpassword input {
+    position: relative;
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: .5rem;
+}
+
+span {
+    color: rgb(16, 16, 16);
+    cursor: pointer;
+}
+
+#content #password #span::before {
+    content: "\f06e";
+    font-family: fontAwesome;
+}
+
+#content #password #span.hide::before {
+    content: "\f070";
+    font-family: fontAwesome;
+}
+#content .steringmeter
+{
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ height: 3px;
+ background-color:transparent;
+}
+#content .steringmeter::before
+{
+ content: '';
+ position: absolute;
+ width: 0%;
+ height: 100%;
+ transition: .5s;
+ background-color: red;
+}
+#content.weak .steringmeter::before
+{
+ width: 20%;
+ background-color: red;
+ filter: drop-shadow(0 0 5px red) drop-shadow(0 0 10px red) drop-shadow(0 0 20px red);
+}
+#content.medium .steringmeter::before
+{
+ width: 66%;
+ background-color: yellow;
+ filter: drop-shadow(0 0 5px yellow) drop-shadow(0 0 10px yellow) drop-shadow(0 0 20px yellow);
+}
+#content.strong .steringmeter::before
+{
+ width: 100%;
+ background-color: rgb(0, 255, 0);
+ filter: drop-shadow(0 0 5px rgb(0, 255, 0)) drop-shadow(0 0 10px rgb(0, 255, 0)) drop-shadow(0 0 20px rgb(0, 255, 0));
+}
+#content .steringmeter::after
+{
+ position: absolute;
+ 
+ top: -35px;
+ left: 15px;
+}
+#content.weak .steringmeter::after
+{
+ content: "your password is weak";
+ color: red;
+}
+#content.medium .steringmeter::after
+{
+ content: "your password is medium";
+ color: yellow;
+}
+#content.strong .steringmeter::after
+{
+ content: "your password is strong";
+ color: rgb(4, 255, 4);
+}
